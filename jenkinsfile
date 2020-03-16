@@ -1,0 +1,21 @@
+def function_name='syncron_get_rds_info'
+def region_name='us-east-1'
+
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM') {
+            steps {
+                echo 'SCM..'
+                git credentialsId: 'chandankumar23', url: 'https://github.com/chandankumar23/syncron.git'
+            }
+        }
+        stage('Deployment') {
+          steps {
+                echo 'Deploying lambda function..'
+                sh 'aws lamdba update-function-code --function_name= $(function_name)
+          }
+        }
+    }
+}

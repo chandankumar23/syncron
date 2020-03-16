@@ -1,0 +1,4 @@
+Readme
+=======
+
+syncron_cr_function : File contains code to create function syncron_insert_dynamo and syncron_get_rds_info

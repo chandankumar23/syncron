@@ -1,0 +1,11 @@
+aws lambda create-function \
+  -- function-name syncron_insert_dynamo \
+  -- runtime python 3.6 \
+  -- role arn:aws:iam::186893775337:role/service-role/lambda-dynamodb \
+  -- handler lambda_handler
+
+aws lambda create-function \
+  -- function-name syncron_get_rds_info \
+  -- runtime python 3.6 \
+  -- role arn:aws:iam::186893775337:role/service-role/lambda-dynamodb
+  -- handler lambda_handler
